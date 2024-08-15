@@ -1,0 +1,227 @@
+@define-color black #24283b;
+@define-color white #a9b1d6;
+@define-color magenta #bb9af7;
+@define-color blue #7aa2f7;
+@define-color cyan #7dcfff;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color orange #ff9e64;
+@define-color red #f7768e;
+@define-color barbg #1a1b26;
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 18px;
+}
+
+window#waybar {
+  background-color: @barbg;
+  color: #ffffff;
+}
+
+tooltip {
+	color: @white;
+	background: @barbg;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+
+#workspaces button {
+  color: @blue;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button.focused {
+  color: #bf616a;
+}
+
+#workspaces button.active {
+  color: @magenta;
+}
+
+#workspaces button.urgent {
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#bluetooth,
+#custom-hyprPicker,
+#custom-power-menu,
+#custom-spotify,
+#custom-weather,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+  margin: 2px 0 2px 0;
+  padding: 2px 10px;
+  color: @barbg;
+  border-radius: 14px;
+  background-color: @orange;
+}
+
+
+#custom-power-menu {
+  border-radius: 9.5px;
+  border-radius: 7.5px;
+  padding: 0 5px;
+}
+
+#custom-launcher {
+  border-radius: 7.5px;
+  padding: 0 3px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#pulseaudio {
+}
+
+#backlight {
+}
+
+#clock {
+}
+
+#battery {
+}
+
+#battery.charging,
+#battery.full,
+#battery.plugged {
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #abb2bf;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#disk {
+  background-color: #964b00;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature {
+  background-color: #f0932b;
+}
+
+#temperature.critical {
+  background-color: #eb4d4b;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+  background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+}
+
+#mpd {
+}
+
+#mpd.disconnected {
+}
+
+#mpd.stopped {
+}
+
+#mpd.paused {
+}
+
+#language {
+  background: #00b093;
+  padding: 0 5px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#keyboard-state {
+  background: #97e1ad;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#keyboard-state > label {
+  padding: 0 5px;
+}
+
+#custom-spotify {
+  padding: 0 10px;
+  margin: 0 4px;
+}
+
+#keyboard-state > label.locked {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#clock span {
+  color: red;
+}  
