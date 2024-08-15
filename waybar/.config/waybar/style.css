@@ -7,7 +7,7 @@
 @define-color yellow #e0af68;
 @define-color orange #ff9e64;
 @define-color red #f7768e;
-@define-color barbg #1a1b26;
+@define-color bg #1a1b26;
 
 * {
   font-family: JetBrainsMono Nerd Font;
@@ -15,7 +15,7 @@
 }
 
 window#waybar {
-  background-color: @barbg;
+  background-color: transparent;
   color: #ffffff;
 }
 
@@ -26,13 +26,27 @@ tooltip {
 	border-radius: 10px;
 }
 
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
+}
+
+.module {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#workspaces {
+  background: @bg;
+  border-radius: 20px;
+}
+
 #workspaces button {
   color: @blue;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: transparent;
-  border: none;
-  border-radius: 0;
+  padding: 0px 10px;
 }
 
 #workspaces button.focused {
@@ -77,9 +91,9 @@ tooltip {
 #custom-weather.default {
   margin: 2px 0 2px 0;
   padding: 2px 10px;
-  color: @barbg;
-  border-radius: 14px;
-  background-color: @orange;
+  color: @blue;
+  border-radius: 20px;
+  background-color: @bg;
 }
 
 
