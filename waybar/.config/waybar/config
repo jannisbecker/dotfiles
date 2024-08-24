@@ -9,19 +9,12 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "custom/weather"],
     "modules-center": ["custom/spotify"],
-    "modules-right": ["tray", "cpu", "backlight", "pulseaudio", "battery", "network", "clock#date", "clock"],
+    "modules-right": ["tray", "cpu", "backlight", "pulseaudio", "battery", "network", "clock", "clock#date"],
     "hyprland/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
-      "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-      },
       "format-icons": {
         "1": "一",
         "2": "二",
@@ -41,29 +34,28 @@
     "tray": {
         "spacing": 10
     },
-    "clock": {
-        "format": "<i> </i>{:%a %b %d}",
-    },
     "clock#date": {
-        "format": "<span> </span>{:%I:%M %p}",
+        "format": " {:%a %b %d}",
+    },
+    "clock": {
+        "format": "  {:%I:%M %p}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
-
     "cpu": {
       "interval": 10,
-      "format": "<i></i>{}%",
+      "format": " {}%",
       "max-length": 10,
       "on-click": "",
     },
     "memory": {
         "interval": 30,
-        "format": "<i></i>{}%",
-        "format-alt":"<i></i>{used:0.1f}G",
+        "format": " {}%",
+        "format-alt":" {used:0.1f}G",
         "max-length": 10,
     },
     "backlight": {
-        "device": "DP-1",
-        "format": "<i>{icon}</i>{percent}%",
+        // "device": "intel_backlight",
+        "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-click": "",
     },
