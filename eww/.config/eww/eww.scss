@@ -10,6 +10,7 @@ $accent: #1282cd;
   background-color: transparent;
   color: $text;
   font-size: 14px;
+  font-weight: 600;
   padding: 6px 10px;
 
 }
@@ -23,11 +24,8 @@ $accent: #1282cd;
 }
 
 .workspace-item {
-  margin: 0 4px;
-
   &.current {
     color: $accent;
-    font-weight: 800;
   }
 }
 
