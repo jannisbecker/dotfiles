@@ -1,9 +1,46 @@
 $bg: rgba(40,50,60, 0.8);
 $text: #b0b4bc;
 $accent: #1282cd;
+$bat-charging: #cd7012;
 
-* {
-  all: unset;
+// * {
+//   all: unset;
+// }
+
+tooltip {
+  background: rgba(20,30,40, 0.8);
+  margin: 2px;
+  border-radius: 4px;
+}
+
+.systray menu {
+	border-radius: 4px;
+	padding: 6px;
+
+	background-color: rgba(20,30,40, 0.8);
+
+	> menuitem {
+		padding: 4px;
+    color: $text;
+
+		&:disabled label {
+			color: gray;
+		}
+
+		&:hover {
+			background-color: $accent;
+      border-radius: 4px;
+		}
+	}
+
+	separator {
+		background-color: #222222;
+		padding-top: 1px;
+
+		&:last-child {
+			padding: unset;
+		}
+	}
 }
 
 .bar {
@@ -12,12 +49,11 @@ $accent: #1282cd;
   font-size: 14px;
   font-weight: 600;
   padding: 6px 10px;
-
 }
 
-.workspaces, 
-.music, 
-.tray {
+.widgets-left, 
+.widgets-center, 
+.widgets-right {
   background: $bg;
   padding: 4px 10px;
   border-radius: 20px;
@@ -29,14 +65,29 @@ $accent: #1282cd;
   }
 }
 
+
+.metric.battery {
+  &.charging {
+    highlight {
+      background-color: $bat-charging;
+    }
+  }
+}
+
+
 .metric scale trough {
   all: unset;
   background-color: #4e4e4e;
   border-radius: 50px;
-  min-height: 3px;
+  min-height: 4px;
   min-width: 50px;
   margin-left: 10px;
   margin-right: 10px;
+
+  slider {
+    background: transparent;
+    border: none;
+  }
 
   highlight {
     all: unset;
@@ -50,3 +101,23 @@ $accent: #1282cd;
   font-size: 16px;
 }
 
+.sidepanel {
+  background: transparent;
+}
+
+.sidepanel-inner {
+  background: $bg;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card {
+  background: $bg;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid $accent;
+}
+
+circular-progress trough {
+  background: red;
+}

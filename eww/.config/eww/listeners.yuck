@@ -1,0 +1,10 @@
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll volume :initial 0 :interval "1s"
+  "scripts/get-volume")
+
+(defpoll time :interval "10s"
+  "date '+%H:%M %b %d, %Y'")

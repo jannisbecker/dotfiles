@@ -1,0 +1,29 @@
+(defwindow sidepanel
+    :monitor 0
+    :exclusive true
+    :windowtype "dock"
+    :stacking "fg"
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "480px"
+                        :height "100%"
+                        :anchor "top right")
+    (sidepanel))  
+
+(defwidget sidepanel []
+    (revealer :transition "none" :reveal sidepanel-open
+        (box :class "sidepanel-inner" :orientation "v" :valign "start" :spacing 10
+            (box :orientation "h" :valign "fill" :spacing 10 :height 80 
+                (progress-card :value 20 :label "CPU")
+                (progress-card :value 20 :label "MEM")
+            )
+        )
+    )
+)
+
+(defwidget progress-card [value label]
+    (box :height 120 :class "card progress-card"
+        (circular-progress :class "circular" :value value :thickness 10 label)
+    )
+)
+  
