@@ -14,3 +14,4 @@ alias gb='git branch --sort=committerdate'
 
 PS1='[\u@\h \W]\$ '
 
+export EDITOR=vim
